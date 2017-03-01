@@ -1,0 +1,31 @@
+From 40f2e8ecd34762aa4b2f79ef1f50aab8d32cdc3e Mon Sep 17 00:00:00 2001
+From: Johannes Meyer <johannes@intermodalics.eu>
+Date: Wed, 1 Mar 2017 16:05:10 +0100
+Subject: [PATCH] Patch package name
+
+---
+ debian/control.em | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/debian/control.em b/debian/control.em
+index 7cbf65a..e5f5d39 100644
+--- a/debian/control.em
++++ b/debian/control.em
+@@ -1,4 +1,4 @@
+-Source: @(Package)
++Source: @(Package.replace('gazebo-', 'gazebo8-'))
+ Section: misc
+ Priority: extra
+ Maintainer: @(Maintainer)
+@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= @(debhelper_version).0.0), @(', '.join(BuildDepends
+ Homepage: @(Homepage)
+ Standards-Version: 3.9.2
+ 
+-Package: @(Package)
++Package: @(Package.replace('gazebo-', 'gazebo8-'))
+ Architecture: any
+ Depends: ${shlibs:Depends}, ${misc:Depends}, @(', '.join(Depends))
+ @[if Conflicts]Conflicts: @(', '.join(Conflicts))@\n@[end if]@
+-- 
+2.7.4
+
