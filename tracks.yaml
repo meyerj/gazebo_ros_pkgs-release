@@ -139,8 +139,8 @@ tracks:
       :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
     - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
       --replace
-    - git-bloom-generate -y rosrelease :{ros_distro} --prefix release/:{ros_distro}-gazebo8 --source upstream -i :{release_inc}
-    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro}-gazebo8 :{ros_distro}
+    - git-bloom-generate -y rosrelease :{ros_distro} --prefix release/gazebo8 --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/gazebo8/:{ros_distro} :{ros_distro}
       -i :{release_inc} --os-name ubuntu
     devel_branch: kinetic-devel
     last_version: 2.5.9
