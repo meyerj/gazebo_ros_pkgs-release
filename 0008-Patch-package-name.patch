@@ -1,0 +1,56 @@
+From e7857349c478734734fca40e7dd040a19121b115 Mon Sep 17 00:00:00 2001
+From: Johannes Meyer <johannes@intermodalics.eu>
+Date: Wed, 1 Mar 2017 16:23:43 +0100
+Subject: [PATCH 8/8] Patch package name
+
+---
+ debian/changelog.em | 2 +-
+ debian/control.em   | 4 ++--
+ debian/rules.em     | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/debian/changelog.em b/debian/changelog.em
+index 3585909..31e1635 100644
+--- a/debian/changelog.em
++++ b/debian/changelog.em
+@@ -1,4 +1,4 @@
+-@[for change_version, change_date, changelog, main_name, main_email in changelogs]@(Package) (@(change_version)@(DebianInc)@(Distribution)) @(Distribution); urgency=high
++@[for change_version, change_date, changelog, main_name, main_email in changelogs]@(Package.replace('gazebo-', 'gazebo8-')) (@(change_version)@(DebianInc)@(Distribution)) @(Distribution); urgency=high
+ 
+ @(changelog)
+ 
+diff --git a/debian/control.em b/debian/control.em
+index 7cbf65a..e5f5d39 100644
+--- a/debian/control.em
++++ b/debian/control.em
+@@ -1,4 +1,4 @@
+-Source: @(Package)
++Source: @(Package.replace('gazebo-', 'gazebo8-'))
+ Section: misc
+ Priority: extra
+ Maintainer: @(Maintainer)
+@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= @(debhelper_version).0.0), @(', '.join(BuildDepends
+ Homepage: @(Homepage)
+ Standards-Version: 3.9.2
+ 
+-Package: @(Package)
++Package: @(Package.replace('gazebo-', 'gazebo8-'))
+ Architecture: any
+ Depends: ${shlibs:Depends}, ${misc:Depends}, @(', '.join(Depends))
+ @[if Conflicts]Conflicts: @(', '.join(Conflicts))@\n@[end if]@
+diff --git a/debian/rules.em b/debian/rules.em
+index 991c991..c3b576c 100755
+--- a/debian/rules.em
++++ b/debian/rules.em
+@@ -52,7 +52,7 @@ override_dh_shlibdeps:
+ 	# in the install tree that was dropped by catkin, and source it.  It will
+ 	# set things like CMAKE_PREFIX_PATH, PKG_CONFIG_PATH, and PYTHONPATH.
+ 	if [ -f "@(InstallationPrefix)/setup.sh" ]; then . "@(InstallationPrefix)/setup.sh"; fi && \
+-	dh_shlibdeps -l$(CURDIR)/debian/@(Package)/@(InstallationPrefix)/lib/
++	dh_shlibdeps -l$(CURDIR)/debian/@(Package.replace('gazebo-', 'gazebo8-'))/@(InstallationPrefix)/lib/
+ 
+ override_dh_auto_install:
+ 	# In case we're installing to a non-standard location, look for a setup.sh
+-- 
+2.7.4
+
