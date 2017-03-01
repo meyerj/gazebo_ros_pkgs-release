@@ -1,7 +1,7 @@
 From 0cd32902a9f74fb67cfb19ce4abcb988124a620f Mon Sep 17 00:00:00 2001
 From: Johannes Meyer <johannes@intermodalics.eu>
 Date: Wed, 1 Mar 2017 16:15:16 +0100
-Subject: [PATCH 2/2] Patch package name
+Subject: [PATCH 5/8] Patch package name
 
 ---
  debian/changelog.em | 2 +-
