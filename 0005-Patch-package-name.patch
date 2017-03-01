@@ -1,7 +1,7 @@
-From 3ee551c942ff5acaa122642ef77a1690eeea36e8 Mon Sep 17 00:00:00 2001
+From 02259f549c79e85477c66048d17e418e17a87107 Mon Sep 17 00:00:00 2001
 From: Johannes Meyer <johannes@intermodalics.eu>
 Date: Wed, 1 Mar 2017 16:04:44 +0100
-Subject: [PATCH 1/2] Patch package name
+Subject: [PATCH 5/8] Patch package name
 
 ---
  debian/control.em | 4 ++--
