@@ -6,7 +6,8 @@ Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin
 Homepage: http://gazebosim.org/tutorials?cat=connect_ros
 Standards-Version: 3.9.2
 
-Package: ros-indigo-gazebo-ros-pkgs
+Package: ros-indigo-gazebo7-ros-pkgs
+Provides: ros-indigo-gazebo-ros-pkgs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-gazebo-msgs, ros-indigo-gazebo-plugins, ros-indigo-gazebo-ros
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-gazebo7-msgs, ros-indigo-gazebo7-plugins, ros-indigo-gazebo7-ros
 Description: Interface for using ROS with the Gazebo simulator.
